@@ -1,0 +1,33 @@
+Our Project will be a "Computer Shop". The Idea of our Project is to make a Website that will help both buyer and seller. A Buyer always wants to know about the product they are buying. It's difficult for a Seller for a seller to remember the specifications of all products at the same time. So our project idea is making a website that can break the barrier for both buyers and Sellers.
+In this project A Customer from a remote area who wants to buy components through the Internet sitting at Home.
+
+"Required Tables(Based on Assumption)"
+
+There will be at least 8 to 10 tables in our designed database. like:
+Cart,Category,User,Product,Storage,Laptop etc.
+
+Features:
+
+There will be A main page with a Search option.
+Register/Login Page,Password.
+Product Page,Cart page.
+About Us/Contact Us page etc.
+(We will add more features,If possible.) 
+
+Stakeholders will be:
+Website Admin: who will control all of things.
+Shop Owner
+Customer
+Website Visitor
+It Staff
+Retailers
+Manager
+Employees
+
+Tools and Resources:
+HTML/CSS
+PHP
+Bootstrap
+MySQL
+Javascript
+Google Map API
