@@ -252,3 +252,158 @@ INSERT INTO `product` (`product_id`, `category_id`, `company`, `name`, `stock_st
 (506, 5, 'Seagate', 'Seagate SkyHawk 6TB Surveillance HDD', 1, 3, 18000, 'img/skyhawk-6tb-');
 
 -- --------------------------------------------------------
+--
+-- Table structure for table `ram`
+--
+
+CREATE TABLE `ram` (
+  `product_id` int(20) NOT NULL,
+  `type` varchar(100) NOT NULL DEFAULT 'DDR4',
+  `capacity` varchar(100) NOT NULL,
+  `frequency` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ram`
+--
+
+INSERT INTO `ram` (`product_id`, `type`, `capacity`, `frequency`) VALUES
+(201, 'DDR4', '16GB', '3200 MHz'),
+(202, 'DDR4', '16GB', '3200 MHz'),
+(203, 'DDR4', '8GB', '3200 MHz'),
+(204, 'DDR4', '16GB', '3200 MHz'),
+(205, 'DDR4', '8GB', '2666 MHz'),
+(206, 'DDR4', '4GB', '2666 MHz'),
+(207, 'DDR4', '16GB', '3200 MHz'),
+(208, 'DDR4', '16GB', '2400 MHz'),
+(209, 'DDR4', '16GB', '3200 MHz'),
+(210, 'DDR4', '16GB', '2400 MHz');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `storage`
+--
+
+CREATE TABLE `storage` (
+  `product_id` int(20) NOT NULL,
+  `type` varchar(100) NOT NULL DEFAULT 'SATA',
+  `capacity` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `storage`
+--
+
+INSERT INTO `storage` (`product_id`, `type`, `capacity`) VALUES
+(501, 'SATA', '1TB'),
+(502, 'SATA', '4TB'),
+(503, 'SATA', '12TB'),
+(504, 'SATA', '3TB'),
+(505, 'SATA', '2TB'),
+(506, 'SATA', '6TB');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user01`
+--
+
+CREATE TABLE `user01` (
+  `fname` varchar(30) NOT NULL,
+  `lname` varchar(30) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `phone` varchar(11) NOT NULL,
+  `street` varchar(100) DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL,
+  `country` varchar(100) NOT NULL,
+  `newsletter` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user01`
+--
+
+INSERT INTO `user01` (`fname`, `lname`, `username`, `email`, `password`, `phone`, `street`, `city`, `country`, `newsletter`) VALUES
+('Tanzamul', 'Islam', 'Rakib', 'tanzamul07@gmail.com', 'abc123456789', '0176', 'Baridhara', 'Dhaka', 'Bangladesh', 0),
+('Sabrina', 'Sifa', 'Ananna', 'anannakayser123@gmail.com', 'xyz123456789', '0171', 'Gulshan', 'Dhaka', 'Bangladesh', 0);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`cart_id`),
+  ADD KEY `username` (`username`),
+  ADD KEY `product_id` (`product_id`);
+
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`category_id`),
+  ADD UNIQUE KEY `category_name` (`category_name`);
+
+--
+-- Indexes for table `gpu`
+--
+ALTER TABLE `gpu`
+  ADD PRIMARY KEY (`product_id`);
+
+--
+-- Indexes for table `laptop`
+--
+ALTER TABLE `laptop`
+  ADD PRIMARY KEY (`product_id`);
+
+--
+-- Indexes for table `monitor`
+--
+ALTER TABLE `monitor`
+  ADD PRIMARY KEY (`product_id`);
+
+--
+-- Indexes for table `processor`
+--
+ALTER TABLE `processor`
+  ADD PRIMARY KEY (`product_id`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`product_id`),
+  ADD KEY `category_id` (`category_id`);
+
+--
+-- Indexes for table `ram`
+--
+ALTER TABLE `ram`
+  ADD PRIMARY KEY (`product_id`);
+
+--
+-- Indexes for table `storage`
+--
+ALTER TABLE `storage`
+  ADD PRIMARY KEY (`product_id`);
+
+--
+-- Indexes for table `user01`
+--
+ALTER TABLE `user01`
+  ADD PRIMARY KEY (`username`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `phone` (`phone`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
