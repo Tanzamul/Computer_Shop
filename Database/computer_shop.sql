@@ -407,3 +407,54 @@ ALTER TABLE `user01`
 --
 -- AUTO_INCREMENT for table `cart`
 --
+ALTER TABLE `cart`
+  MODIFY `cart_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+
+--
+-- Constraints for table `gpu`
+--
+ALTER TABLE `gpu`
+  ADD CONSTRAINT `gpu_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
+
+--
+-- Constraints for table `laptop`
+--
+ALTER TABLE `laptop`
+  ADD CONSTRAINT `laptop_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
+
+--
+-- Constraints for table `monitor`
+--
+ALTER TABLE `monitor`
+  ADD CONSTRAINT `monitor_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
+
+--
+-- Constraints for table `processor`
+--
+ALTER TABLE `processor`
+  ADD CONSTRAINT `processor_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
+
+--
+-- Constraints for table `product`
+--
+ALTER TABLE `product`
+  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`);
+
+--
+-- Constraints for table `ram`
+--
+ALTER TABLE `ram`
+  ADD CONSTRAINT `ram_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
+
+--
+-- Constraints for table `storage`
+--
+ALTER TABLE `storage`
+  ADD CONSTRAINT `storage_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
+COMMIT;
+
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
