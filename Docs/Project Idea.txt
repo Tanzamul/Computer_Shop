@@ -16,13 +16,13 @@ About Us/Contact Us page etc.
 
 Stakeholders will be:
 Website Admin: who will control all of things.
-Shop Owner
+Shop Owner/Admin
 Customer
 Website Visitor
 It Staff
 Retailers
 Manager
-Employees
+Employees/Shopkeeper
 
 Tools and Resources:
 HTML/CSS
